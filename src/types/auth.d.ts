@@ -1,6 +1,7 @@
 declare global {
   interface TUser {
     accessToken: string;
+    exp: number;
     refreshToken: string;
     user: {
       email: string;

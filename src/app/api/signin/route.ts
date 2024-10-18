@@ -23,7 +23,7 @@ export const POST = async (request: NextRequest): Promise<NextResponse> => {
         success: true,
       });
 
-      response.cookies.set("token", token, { httpOnly: true, maxAge: 90000 });
+      response.cookies.set("token", token, { httpOnly: true });
 
       return response;
     }

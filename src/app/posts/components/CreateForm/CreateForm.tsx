@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
 import { object, string } from "yup";
 import { toast } from "react-toastify";
@@ -41,7 +40,6 @@ const formItems: TFormItem[] = [
 ];
 
 const CreateForm: React.FC = () => {
-  const router = useRouter();
   const {
     errors,
     handleBlur,
@@ -53,7 +51,7 @@ const CreateForm: React.FC = () => {
   } = useFormik<TFormConfig>({
     initialValues,
 
-    onSubmit: async (values): Promise<void> => {
+    onSubmit: async (values, { resetForm }): Promise<void> => {
       try {
         const response = await fetch("/api/posts", {
           body: JSON.stringify(values),
@@ -61,8 +59,8 @@ const CreateForm: React.FC = () => {
         });
 
         if (response && response.status === 200) {
+          resetForm();
           toast("Post created successfully", { type: "success" });
-          router.push("/posts");
 
           return;
         }

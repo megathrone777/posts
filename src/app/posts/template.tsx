@@ -26,7 +26,7 @@ const Template: React.FC<TProps> = ({ children }) => {
         </Link>
 
         {pathname !== "/posts" && (
-          <Link href="/posts">
+          <Link href="/posts" prefetch>
             <Button colorScheme="green">User posts</Button>
           </Link>
         )}
