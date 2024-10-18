@@ -14,7 +14,7 @@ const Template: React.FC<TProps> = ({ children }) => {
     const response = await fetch("/api/signout");
 
     if (response && response.status === 200) {
-      router.push("/");
+      router.push("/signin");
     }
   };
 
