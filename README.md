@@ -1,17 +1,39 @@
-## Posts app
+### PREPARATION:
 
-Installation:
+- First you need to have [Node.js](https://nodejs.org/en/download/) installed.
+
+- Then you need to install the software packaging system "yarn" using the command:
 
 ```bash
-npm run dev
-# or
+npm install --global yarn
+```
+
+- Then you need to download the javascript dependency libraries using the command:
+
+```bash
+yarn
+```
+
+### DEVELOPMENT INSTRUCTIONS:
+
+- You can reach the development state using the command:
+
+```
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- http server start at
+  http://localhost:3000
 
-## Demo
+- Achieving the deployment state can be done with the commands:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+yarn build
+yarn start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please run yarn build before every commit
+
+### DEMO:
+
+[https://posts-ten-tau.vercel.app](https://posts-ten-tau.vercel.app)
